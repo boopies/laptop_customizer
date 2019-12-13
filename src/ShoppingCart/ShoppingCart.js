@@ -1,5 +1,6 @@
 import React from 'react';
 import ShoppingCartItems from './ShoppingCartItems/ShoppingCartItems'
+import ShoppingCartTotal from './ShoppinCartTotal/ShoppingCartTotal'
 
 class ShoppingCart extends React.Component {
     render() {
@@ -12,8 +13,8 @@ class ShoppingCart extends React.Component {
 	      		featureHash={featureHash}
 	      		feature={feature}
 	      		name={selectedOption.name}
-	      		usCurrency={this.props.usCurrency}
-	      		cost={selectedOption.cost} />
+	      		cost={selectedOption.cost}
+				usCurrency={this.props.usCurrency} />
 	      );
 	    });
 
@@ -22,19 +23,17 @@ class ShoppingCart extends React.Component {
 	      0
 	    );
 	    
-		return(
-			<section className="main__summary">
-	            <h2>Your cart</h2>
-	            {summary}
-	            <div className="summary__total">
-	              <div className="summary__total__label">Total</div>
-	              <div className="summary__total__value">
-	                {this.props.usCurrency.format(total)}
-	              </div>
-	            </div>
-	        </section>
-		)
-    }
+        return (
+            <div>
+                <h2>Your cart</h2>
+                {summary}
+                <ShoppingCartTotal 
+                  total={total}
+                  usCurrency={this.props.usCurrency}
+                />
+            </div>
+            )
+        }
 }
 
 export default ShoppingCart;

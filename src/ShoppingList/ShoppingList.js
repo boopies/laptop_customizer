@@ -5,7 +5,7 @@ import '../index'
 class ShoppingList extends React.Component{
     render() {
 		const features = Object.keys(this.props.features).map((feature, idx) => {
-	      const featureHash = feature + '-' + idx;
+	    const featureHash = feature + '-' + idx;
 
 	      return (
 	      	<ShoppingListCategory
