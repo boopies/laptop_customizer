@@ -9,7 +9,8 @@ class ShoppingList extends React.Component{
 
 	      return (
 	      	<ShoppingListCategory
-	      		featureHash={featureHash} 
+	      		key={featureHash} 
+				featureHash={featureHash}
 	      		feature={feature} 
 	      		features={this.props.features}
 	      		selected={this.props.selected}

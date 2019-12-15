@@ -8,13 +8,14 @@ class ShoppingListCategory extends React.Component{
         const itemHash = slugify(JSON.stringify(item));
             return (
                 <ShoppingListItem
+                    item={item}
+                    itemHash={itemHash}
+                    key={itemHash}
                     feature={this.props.feature} 
                     features={this.props.features}
                     selected={this.props.selected}
                     usCurrency={this.props.usCurrency}
                     handleFeatureUpdate={this.props.handleFeatureUpdate}
-                    item={item}
-                    itemHash={itemHash}
                 />
             );
          });
