@@ -11,6 +11,7 @@ class ShoppingCart extends React.Component {
 	      return (
 	      	<ShoppingCartItems
 	      		key={featureHash}
+				featureHash={featureHash}
 	      		feature={feature}
 	      		name={selectedOption.name}
 	      		cost={selectedOption.cost}
